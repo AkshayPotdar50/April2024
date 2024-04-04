@@ -7,7 +7,12 @@ public class Test1 {
         String[] arr= {"99", "21", "72","78", "43"};
         System.out.println(largestNumber(arr));
 
+        String str="akshay";
+        System.out.println(findFirstNonRepeatingCharacter(str));
+
     }
+
+
 
     //write a java code to form the largest number using integer array
 
@@ -23,5 +28,14 @@ public class Test1 {
 
     //write a java code to find first non repeating character in string
 
+    public static int findFirstNonRepeatingCharacter(String s){
+        for(int i=0; i<s.length();i++){
+            char c =s.charAt(i);
+            if(s.indexOf(c)==s.lastIndexOf(c)){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 }
