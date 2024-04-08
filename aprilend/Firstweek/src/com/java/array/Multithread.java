@@ -7,6 +7,7 @@ class MyThread extends Thread{
 
             try{
                 Thread.sleep(1000);
+                Thread.yield();
             }catch(InterruptedException e){
                 e.printStackTrace();
             }
