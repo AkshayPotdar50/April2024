@@ -125,6 +125,36 @@ public class Test24 {
             System.out.println(item);
         }
 
+        System.out.println("**************************************************");
+
+        //convert half string uppercase and half into lowercase
+        String example ="this is practice session to get job";
+        int mid=example.length()/2;
+        StringBuilder uppercase= new StringBuilder();
+        StringBuilder lowecase = new StringBuilder();
+        for(int i=0; i<example.length(); i++){
+            if(i<mid){
+                lowecase.append(Character.toLowerCase(example.charAt(i)));
+            }else{
+                uppercase.append(Character.toUpperCase(example.charAt(i)));
+            }
+        }
+        System.out.println(lowecase +uppercase.toString());
+
+        String input4 ="hello world 123";
+        long vowelCount =input4.chars()
+                .mapToObj((ch)-> (char)ch)
+                .map(Character::toLowerCase)
+                .filter(ch->"aeiou".contains(String.valueOf(ch)))
+                .count();
+        System.out.println(vowelCount);
+        System.out.println("********************************************");
+
+        long consonantCount =input4.chars()
+                .mapToObj(ch->(char)ch)
+                .map(Character::toLowerCase)
+                .filter(ch->Character.isLetter(ch) && !"aeiou".contains(String.valueOf(ch))).count();
+        System.out.println(consonantCount);
 
     }
 
